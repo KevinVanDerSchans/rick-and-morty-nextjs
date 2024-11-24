@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["node", "jest"],
+    "typeRoots": ["./node_modules/@types"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@pages/*": ["pages/*"],
+      "@entities/*": ["src/domain/entities/*"],
+      "@config/*": ["src/infrastructure/config/*"],
+      "@redux/*": ["src/infrastructure/redux/*"],
+      "@layouts/*": ["src/presentation/layouts/*"],
+      "@sharedHooks/*": ["src/shared/hooks/*"],
+      "@sharedComponents/*": ["src/shared/components/*"],
+      "@sharedTypes/*": ["src/shared/types/*"],
+      "@constants/*": ["src/shared/constants/*"],
+      "@context/*": ["src/shared/context/*"],
+      "@errors/*": ["src/shared/errors/*"],
+      "@utils/*": ["src/shared/utils/*"],
+      "@svgs/*": ["public/svgs/*"],
+      "@styles/*": ["styles/*"],
+      "@auth/*": ["src/presentation/features/auth/*"],
+      "@theme/*": ["src/presentation/features/theme/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "next.config.mjs",
+    "next-env.d.ts",
+    "jest.config.ts",
+    "jest.setup.ts",
+    "cypress.config.ts",
+    "tests/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "cypress.config.ts"]
+}
