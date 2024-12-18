@@ -33,7 +33,9 @@
       "@svgs/*": ["public/svgs/*"],
       "@styles/*": ["styles/*"],
       "@auth/*": ["src/presentation/features/auth/*"],
-      "@theme/*": ["src/presentation/features/theme/*"]
+      "@theme/*": ["src/presentation/features/theme/*"],
+
+      "@episodes/*": ["src/presentation/features/episodes/*"]
     },
     "plugins": [
       {
