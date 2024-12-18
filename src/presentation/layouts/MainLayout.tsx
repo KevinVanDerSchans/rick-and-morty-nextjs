@@ -1,5 +1,5 @@
 import Header from '@sharedComponents/header/Header'
-import React from 'react'
+import Footer from '@sharedComponents/footer/Footer'
 
 interface MainLayoutProps {
   children: React.ReactNode
@@ -10,6 +10,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     <>
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
