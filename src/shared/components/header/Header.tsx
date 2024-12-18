@@ -16,7 +16,7 @@ const Header = () => {
           <figure className='flex items-center primary-hover-color-transition gap-x-4 hover:brightness-75'>
             <Image
               src={SVGS.LOGO}
-              loading='lazy'
+              priority
               alt='Rick & Morty logo'
               className='w-24 h-24'
             />

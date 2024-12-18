@@ -1,13 +1,15 @@
 import type { AppProps } from 'next/app'
-import '@layouts/MainLayout'
-import '@styles/globals.css'
+import { ErrorProvider } from '@context/ErrorProvider'
 import MainLayout from '@layouts/MainLayout'
+import '@styles/globals.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <MainLayout>
-      <Component {...pageProps} />
-    </MainLayout>
+    <ErrorProvider>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+    </ErrorProvider>
   )
 }
 
