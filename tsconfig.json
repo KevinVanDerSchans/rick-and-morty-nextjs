@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "types": ["node", "jest"],
+    "types": ["node"],
     "typeRoots": ["./node_modules/@types"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -42,18 +42,6 @@
     ],
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "next.config.mjs",
-    "next-env.d.ts",
-    "jest.config.ts",
-    "jest.setup.ts",
-    "cypress.config.ts",
-    "tests/**/*",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules", "cypress.config.ts"]
+  "include": ["next.config.mjs", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

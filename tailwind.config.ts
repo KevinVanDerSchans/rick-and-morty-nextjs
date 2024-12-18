@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-
 import themeConfig from './styles/themeConfig'
 import { tailwindPlugins } from './styles/tailwindPlugins'
 

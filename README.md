@@ -1,3 +1,3 @@
-# Template with NextJS, React, Redux and Jest.
+# Rick & Morty app
 
 ## NextJS / ReactTS / Redux / TailwindCSS

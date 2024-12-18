@@ -24,7 +24,7 @@ export default function Document() {
         />
         <meta
           name='description'
-          content='Template with NextJS, React, Redux and Jest'
+          content='Rick & Morty app built with NextJS, React, Redux and TailwindCSS'
         />
         <meta
           name='author'

@@ -13,12 +13,6 @@
 .env.test.local
 .env.production.local
 
-# testing
-/coverage
-jest-stare/
-cypress.env.json
-test-example/
-
 # next.js
 /.next/
 /out/
