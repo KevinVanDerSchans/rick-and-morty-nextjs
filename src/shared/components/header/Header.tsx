@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import SVGS from '@constants/svgs'
+import MainNavigation from '@sharedComponents/navigation/MainNavigation'
 
 const Header = () => {
   return (
@@ -22,6 +23,13 @@ const Header = () => {
           </figure>
         </Link>
       </div>
+
+      <nav
+        className='flex gap-x-6'
+        aria-label='Main navigation'
+      >
+        <MainNavigation />
+      </nav>
     </header>
   )
 }
