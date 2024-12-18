@@ -12,5 +12,15 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
         color: 'grey',
       },
     },
+
+    '.primary-hover-scale-up': {
+      'transition-property': 'transform',
+      'transition-duration': '500ms',
+      'transition-timing-function': 'ease-in-out',
+      transform: 'scale(1)',
+      '&:hover': {
+        transform: 'scale(1.25)',
+      },
+    },
   })
 }
