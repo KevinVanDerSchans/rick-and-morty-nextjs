@@ -1,5 +1,6 @@
 import React from 'react'
 import Seo from './Seo'
+import EpisodesList from '@episodes/components/EpisodesList'
 
 export default function HomePage() {
   return (
@@ -9,8 +10,8 @@ export default function HomePage() {
         description='Review and check the details of your favorite chapters'
       />
 
-      <main className='flex h-screen items-center justify-center bg-gray-100'>
-        <h1 className='text-3xl'>Rick & Morty</h1>
+      <main className='flex items-center bg-gray-100'>
+        <EpisodesList />
       </main>
     </>
   )
