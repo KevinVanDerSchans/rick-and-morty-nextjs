@@ -1,9 +1,9 @@
 export type Episode = Readonly<{
   id: number
   name: string
-  airDate: string
-  code: string
-  characterIds: number[]
+  air_date: string
+  episode: string
+  characters: string[]
   url?: string
   created?: string
 }>
