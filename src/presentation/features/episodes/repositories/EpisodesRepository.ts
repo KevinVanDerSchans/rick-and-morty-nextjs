@@ -21,8 +21,24 @@ export class EpisodesRepository implements Repository<Episode> {
       throw error
     }
   }
+
+  async getById(id: number): Promise<Episode> {
+    try {
+      const response = await fetch(`${this.url}/${id}`)
+
+      if (!response.ok) {
+        const message = `Error: ${response.status}. ${response.statusText}`
+        throw new Error(message)
+      }
+
+      return (await response.json()) as Episode
+    } catch (error) {
+      throw error
+    }
+  }
 }
 
 export interface Repository<X extends { id: string | number }> {
   getAll(): Promise<X[]>
+  getById?(id: X['id']): Promise<X>
 }

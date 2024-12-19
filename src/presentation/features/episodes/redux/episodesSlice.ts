@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getEpisodesAsync } from '@episodes/redux/episodesThunks'
+import { getEpisodesAsync, getEpisodeByIdAsync } from '@episodes/redux/episodesThunks'
 
 import { Episode } from '@entities/Episode'
 import { RequestStatus } from '@sharedTypes/RequestStatus'
@@ -10,6 +10,7 @@ const episodesSlice = createSlice({
   name: 'episodes',
   reducers: {},
   extraReducers: builder => {
+    // Episodes List
     builder.addCase(getEpisodesAsync.fulfilled, (state, { payload }: { payload: Episode[] }) => {
       state.status = RequestStatus.Loaded
       state.episodes = payload
@@ -23,6 +24,22 @@ const episodesSlice = createSlice({
     builder.addCase(getEpisodesAsync.rejected, (state, action) => {
       state.status = RequestStatus.Error
       state.fetchErrorMessage = action.error.message || 'Error loading Episodes'
+    })
+
+    // Single Episode
+    builder.addCase(getEpisodeByIdAsync.fulfilled, (state, { payload }: { payload: Episode }) => {
+      state.status = RequestStatus.Loaded
+      state.selectedEpisode = payload
+      state.hasFetchError = false
+      state.fetchErrorMessage = null
+    })
+    builder.addCase(getEpisodeByIdAsync.pending, state => {
+      state.status = RequestStatus.Idle
+      state.fetchErrorMessage = null
+    })
+    builder.addCase(getEpisodeByIdAsync.rejected, (state, action) => {
+      state.status = RequestStatus.Error
+      state.fetchErrorMessage = action.error.message || 'Error loading details for this episode'
     })
   },
 })

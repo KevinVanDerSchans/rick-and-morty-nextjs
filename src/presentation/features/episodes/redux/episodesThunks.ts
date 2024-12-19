@@ -17,3 +17,16 @@ export const getEpisodesAsync = createAsyncThunk<Episode[], { repo: EpisodesRepo
     }
   }
 )
+
+export const getEpisodeByIdAsync = createAsyncThunk<Episode, { id: number; repo: EpisodesRepository }>(
+  'episodes/loadById',
+  async ({ id, repo }) => {
+    try {
+      const episode = await repo.getById(id)
+      return episode
+    } catch (error) {
+      errorService.handleError(new EpisodesErrors.EpisodeErrorFetchingById())
+      throw error
+    }
+  }
+)

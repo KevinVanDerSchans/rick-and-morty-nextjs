@@ -14,9 +14,17 @@ class EpisodesErrorFetching extends CustomError {
   }
 }
 
+class EpisodeErrorFetchingById extends CustomError {
+  constructor(message: string = 'Error when fetching this Episode') {
+    super(message)
+    this.name = 'EpisodeErrorFetchingById'
+  }
+}
+
 const EpisodesErrors = {
   EpisodesErrorNotFound,
   EpisodesErrorFetching,
+  EpisodeErrorFetchingById,
 }
 
 export default EpisodesErrors
