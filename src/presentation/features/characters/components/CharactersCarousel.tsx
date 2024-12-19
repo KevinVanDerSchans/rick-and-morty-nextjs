@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
 import Image from 'next/image'
 import { Character } from '@entities/Character'
-import { useFetchCharacters } from '@characters/hooks/useFetchCharacters'
+import { useCharactersCarousel } from '@characters/hooks/useCharactersCarousel'
+import { CharactersCarouselButton } from '@characters/components/CharactersCarouselButton'
 import { RequestStatus } from '@sharedTypes/RequestStatus'
 import { MainSpinner } from '@sharedComponents/loaders/MainSpinner'
 import ErrorFeedback from '@errors/components/ErrorFeedback'
@@ -11,12 +11,8 @@ type Props = {
 }
 
 export function CharactersCarousel({ characterUrls }: Props) {
-  const characterIds = characterUrls.map(url => parseInt(url.split('/').pop()!, 10))
-  const { characters, status, fetchErrorMessage, loadCharacters } = useFetchCharacters(characterIds)
-
-  useEffect(() => {
-    loadCharacters()
-  }, [characterIds, loadCharacters])
+  const { emblaRef, characters, status, fetchErrorMessage, scrollNext, scrollPrev, loadCharacters } =
+    useCharactersCarousel({ characterUrls })
 
   if (status === RequestStatus.Error) {
     return (
@@ -40,22 +36,40 @@ export function CharactersCarousel({ characterUrls }: Props) {
 
   if (status === RequestStatus.Loaded) {
     return (
-      <div className='flex space-x-4 overflow-x-scroll py-12'>
-        {characters.map((character: Character) => (
-          <div
-            key={character.id}
-            className='flex-shrink-0 w-32 text-center'
-          >
-            <Image
-              src={character.image}
-              alt={character.name}
-              className='rounded-lg shadow-md'
-              width={128}
-              height={128}
-            />
-            <p className='mt-2 text-sm font-semibold text-gray-800'>{character.name}</p>
+      <div className='relative py-12'>
+        <div
+          className='overflow-hidden'
+          ref={emblaRef}
+        >
+          <div className='flex space-x-4'>
+            {characters.map((character: Character) => (
+              <div
+                key={character.id}
+                className='flex-shrink-0 w-40 text-center'
+              >
+                <Image
+                  src={character.image}
+                  alt={character.name}
+                  className='rounded-xl shadow-md'
+                  width={160}
+                  height={160}
+                />
+                <p className='mt-2 text-sm font-semibold text-gray-800'>{character.name}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <CharactersCarouselButton
+          onClick={scrollPrev}
+          direction='left'
+          ariaLabel='left'
+        />
+        <CharactersCarouselButton
+          onClick={scrollNext}
+          direction='right'
+          ariaLabel='right'
+        />
       </div>
     )
   }
