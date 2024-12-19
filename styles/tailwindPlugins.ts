@@ -30,6 +30,7 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
       '&:hover': {
         'box-shadow': '0 0 20px rgba(65, 11, 31, 0.9)',
       },
+      cursor: 'pointer',
     },
   })
 }
