@@ -9,7 +9,7 @@ export default function EpisodeDetailsPage() {
         description='Review and check the details of your favorite chapters'
       />
 
-      <main className='episode-detail-page flex items-center bg-gray-100'>
+      <main className='episode-detail-page flex-1 items-center'>
         <EpisodeDetails />
       </main>
     </>

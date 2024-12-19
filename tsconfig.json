@@ -35,7 +35,8 @@
       "@auth/*": ["src/presentation/features/auth/*"],
       "@theme/*": ["src/presentation/features/theme/*"],
 
-      "@episodes/*": ["src/presentation/features/episodes/*"]
+      "@episodes/*": ["src/presentation/features/episodes/*"],
+      "@characters/*": ["src/presentation/features/characters/*"]
     },
     "plugins": [
       {

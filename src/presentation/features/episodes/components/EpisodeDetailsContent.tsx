@@ -8,21 +8,29 @@ export function EpisodeDetailsContent({ episode }: PropsType) {
   const { name, episode: code, air_date } = episode
 
   return (
-    <main className='min-h-screen p-6 py-20 bg-gradient-to-br from-greenPortal to-white shadow-lg'>
-      <h1 className='text-2xl font-extrabold mb-6 text-black border-b border-greenPortal pb-2'>{name.toUpperCase()}</h1>
+    <main className='flex flex-col items-center bg-gradient-to-r from-green-100 via-white to-green-50 p-6 md:p-8 rounded-lg shadow-md'>
+      <h1 className='text-2xl md:text-4xl font-bold text-greenPortal mb-4 md:mb-6 text-center tracking-wide drop-shadow-sm'>
+        {name.toUpperCase()}
+      </h1>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-        <p className='text-gray-800 text-lg'>
-          <span className='font-semibold text-black'>Episode:</span> {code}
+      <div className='w-full flex flex-col md:flex-row justify-center text-center gap-y-4 md:gap-y-0 md:gap-x-8 text-lg text-gray-800'>
+        <p className='flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-2'>
+          <span className='font-semibold bg-green-200 text-greenPortal px-2 py-1 rounded-full shadow-sm'>Episode:</span>
+          <span>{code}</span>
         </p>
-
-        <p className='text-gray-800 text-lg'>
-          <span className='font-semibold text-black'>Air Date:</span> {air_date}
+        <p className='flex flex-col md:flex-row items-center space-y-1 md:space-y-0 md:space-x-2'>
+          <span className='font-semibold bg-green-200 text-greenPortal px-2 py-1 rounded-full shadow-sm'>
+            Air Date:
+          </span>
+          <span>{air_date}</span>
         </p>
       </div>
 
-      <div className='mt-8'>
-        <h2 className='text-xl font-bold text-black mb-4'>CHARACTERS</h2>
+      <div className='mt-8 md:mt-10 w-full'>
+        <h2 className='text-xl md:text-2xl font-semibold text-greenPortal mb-4 md:mb-6 text-center uppercase tracking-wide'>
+          Characters
+        </h2>
+        <div className='border-b-2 border-greenPortal'></div>
       </div>
     </main>
   )
