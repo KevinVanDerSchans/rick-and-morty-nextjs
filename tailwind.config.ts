@@ -8,7 +8,11 @@ const config: Config = {
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
-      colors: themeConfig,
+      colors: {
+        ...themeConfig,
+        greenPortal: '#2c9143',
+        greenLightPortal: '#6ab840',
+      },
     },
   },
   plugins: [tailwindPlugins],

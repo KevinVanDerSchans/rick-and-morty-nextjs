@@ -21,7 +21,7 @@ html {
 
 *::-webkit-scrollbar-thumb {
   height: 5rem;
-  background-color: var(--accent);
+  background-color: #71c85f;
 }
 
 @layer utilities {

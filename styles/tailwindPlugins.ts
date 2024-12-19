@@ -22,5 +22,15 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
         transform: 'scale(1.25)',
       },
     },
+
+    '.primary-hover-card-transition': {
+      'box-shadow': '0 0 20px rgba(65, 11, 31, 0.3)',
+      'transition-property': 'all',
+      'transition-duration': '300ms',
+      '&:hover': {
+        'box-shadow': '0 0 20px rgba(65, 11, 31, 0.9)',
+      },
+      cursor: 'pointer',
+    },
   })
 }
