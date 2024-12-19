@@ -32,10 +32,14 @@ export default function EpisodeDetails() {
 
   if (status === RequestStatus.Loaded && selectedEpisode) {
     return (
-      <main className='flex-grow min-h-screen p-6 py-20 bg-gradient-to-br from-greenPortal to-white'>
-        <EpisodeDetailsContent episode={selectedEpisode} />
+      <main className='flex flex-col items-center min-h-screen bg-gradient-to-br from-greenPortal to-white p-6 py-20'>
+        <section className='max-w-5xl w-full p-4 rounded-xl'>
+          <EpisodeDetailsContent episode={selectedEpisode} />
+        </section>
 
-        <CharactersCarousel characterUrls={selectedEpisode.characters} />
+        <section className='max-w-5xl w-full'>
+          <CharactersCarousel characterUrls={selectedEpisode.characters} />
+        </section>
       </main>
     )
   }
