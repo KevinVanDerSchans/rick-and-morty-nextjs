@@ -1,5 +1,6 @@
 import { useFetchEpisode } from '@episodes/hooks/useFetchEpisode'
 import EpisodeDetailsContent from './EpisodeDetailsContent'
+import { CharactersCarousel } from '@characters/components/CharactersCarousel'
 import { RequestStatus } from '@sharedTypes/RequestStatus'
 import { MainSpinner } from '@sharedComponents/loaders/MainSpinner'
 import ErrorFeedback from '@errors/components/ErrorFeedback'
@@ -31,8 +32,10 @@ export default function EpisodeDetails() {
 
   if (status === RequestStatus.Loaded && selectedEpisode) {
     return (
-      <main className='flex-grow'>
+      <main className='flex-grow min-h-screen p-6 py-20 bg-gradient-to-br from-greenPortal to-white'>
         <EpisodeDetailsContent episode={selectedEpisode} />
+
+        <CharactersCarousel characterUrls={selectedEpisode.characters} />
       </main>
     )
   }
