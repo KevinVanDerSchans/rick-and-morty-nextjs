@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState, AppDispatch } from '@redux/store/store'
 
@@ -22,6 +22,12 @@ export function useFetchEpisodes() {
       throw error
     }
   }, [repo, dispatch])
+
+  useEffect(() => {
+    if (status === 'idle') {
+      loadEpisodes()
+    }
+  }, [status, loadEpisodes])
 
   return {
     loadEpisodes,
