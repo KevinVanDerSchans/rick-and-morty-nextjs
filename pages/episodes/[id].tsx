@@ -1,7 +1,7 @@
 import Seo from '@pages/Seo'
 import EpisodeDetails from '@episodes/components/EpisodeDetails'
 
-export default function EpisodeDetailPage() {
+export default function EpisodeDetailsPage() {
   return (
     <>
       <Seo
