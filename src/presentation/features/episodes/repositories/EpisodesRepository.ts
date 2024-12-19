@@ -15,8 +15,8 @@ export class EpisodesRepository implements Repository<Episode> {
         throw new Error(message)
       }
 
-      const answer = (await response.json()) as Episode[]
-      return answer
+      const answer = await response.json()
+      return answer.results as Episode[]
     } catch (error) {
       throw error
     }
