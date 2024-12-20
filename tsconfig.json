@@ -36,7 +36,8 @@
       "@theme/*": ["src/presentation/features/theme/*"],
 
       "@episodes/*": ["src/presentation/features/episodes/*"],
-      "@characters/*": ["src/presentation/features/characters/*"]
+      "@characters/*": ["src/presentation/features/characters/*"],
+      "@comments/*": ["src/presentation/features/comments/*"]
     },
     "plugins": [
       {

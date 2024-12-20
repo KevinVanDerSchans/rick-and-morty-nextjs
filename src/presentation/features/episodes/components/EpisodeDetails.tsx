@@ -1,6 +1,7 @@
 import { useFetchEpisode } from '@episodes/hooks/useFetchEpisode'
 import EpisodeDetailsContent from './EpisodeDetailsContent'
 import { CharactersCarousel } from '@characters/components/CharactersCarousel'
+import CommentEpisodeForm from '@comments/components/CommentEpisodeForm/CommentEpisodeForm'
 import { RequestStatus } from '@sharedTypes/RequestStatus'
 import { MainSpinner } from '@sharedComponents/loaders/MainSpinner'
 import ErrorFeedback from '@errors/components/ErrorFeedback'
@@ -38,7 +39,15 @@ export default function EpisodeDetails() {
         </section>
 
         <section className='max-w-5xl w-full'>
-          <CharactersCarousel characterUrls={selectedEpisode.characters} />
+          <div className='p-6 rounded-xl'>
+            <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Characters</h3>
+            <CharactersCarousel characterUrls={selectedEpisode.characters} />
+          </div>
+
+          <div className='p-6 rounded-xl'>
+            <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Share Your Thoughts</h3>
+            <CommentEpisodeForm />
+          </div>
         </section>
       </main>
     )

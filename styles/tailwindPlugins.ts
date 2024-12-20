@@ -9,7 +9,7 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
       'transition-duration': '500ms',
       color: 'white',
       '&:hover': {
-        color: 'grey',
+        color: '#6ab840',
       },
     },
 
@@ -31,6 +31,19 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
         'box-shadow': '0 0 20px rgba(65, 11, 31, 0.9)',
       },
       cursor: 'pointer',
+    },
+
+    '.primary-hover-button-transition': {
+      'transition-property': 'background-color, color',
+      'transition-duration': '500ms',
+      'background-color': 'black',
+      color: 'white',
+      'font-weight': 'semibold',
+      '&:hover': {
+        'background-color': '#6ab840',
+        color: 'black',
+        'font-weight': 'semibold',
+      },
     },
   })
 }
