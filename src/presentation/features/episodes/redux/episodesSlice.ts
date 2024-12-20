@@ -23,7 +23,7 @@ const episodesSlice = createSlice({
     })
     builder.addCase(getEpisodesAsync.rejected, (state, action) => {
       state.status = RequestStatus.Error
-      state.fetchErrorMessage = action.error.message || 'Error loading Episodes'
+      state.fetchErrorMessage = action.error.message || 'Error loading the episodes'
     })
 
     // Single Episode
@@ -39,7 +39,7 @@ const episodesSlice = createSlice({
     })
     builder.addCase(getEpisodeByIdAsync.rejected, (state, action) => {
       state.status = RequestStatus.Error
-      state.fetchErrorMessage = action.error.message || 'Error loading details for this episode'
+      state.fetchErrorMessage = action.error.message || 'Error loading the details for this episode'
     })
   },
 })

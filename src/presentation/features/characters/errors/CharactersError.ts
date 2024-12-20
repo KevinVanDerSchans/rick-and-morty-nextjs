@@ -14,7 +14,7 @@ class CharactersErrorFetching extends CustomError {
   }
 }
 
-class CharracterErrorFetchingById extends CustomError {
+class CharacterErrorFetchingById extends CustomError {
   constructor(message: string = 'Error when fetching this Character') {
     super(message)
     this.name = 'CharacterErrorFetchingById'
@@ -24,7 +24,7 @@ class CharracterErrorFetchingById extends CustomError {
 const CharactersErrors = {
   CharactersErrorNotFound,
   CharactersErrorFetching,
-  CharracterErrorFetchingById,
+  CharacterErrorFetchingById,
 }
 
 export default CharactersErrors

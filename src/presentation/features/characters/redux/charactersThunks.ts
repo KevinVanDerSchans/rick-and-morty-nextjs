@@ -12,7 +12,7 @@ export const getCharactersById = createAsyncThunk<Character[], { ids: number[]; 
       const character = await repo.getAll(ids)
       return character
     } catch (error) {
-      errorService.handleError(new CharactersErrors.CharracterErrorFetchingById())
+      errorService.handleError(new CharactersErrors.CharacterErrorFetchingById())
       throw error
     }
   }
