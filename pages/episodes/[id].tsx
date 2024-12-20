@@ -6,7 +6,7 @@ export default function EpisodeDetailsPage() {
     <>
       <Seo
         title='Rick & Morty - Episode details'
-        description='Review and check the details of your favorite chapters'
+        description='Discover in-depth details about this episode, including air date, unique episode codes and the characters that brought it to life.'
       />
 
       <main className='episode-detail-page flex-1 items-center'>
