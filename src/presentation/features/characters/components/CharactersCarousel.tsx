@@ -36,7 +36,7 @@ export function CharactersCarousel({ characterUrls }: Props) {
 
   if (status === RequestStatus.Loaded) {
     return (
-      <div className='relative py-8'>
+      <div className='relative'>
         <div
           className='overflow-hidden'
           ref={emblaRef}
