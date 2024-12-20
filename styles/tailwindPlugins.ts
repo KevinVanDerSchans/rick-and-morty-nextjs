@@ -36,11 +36,11 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
     '.primary-hover-button-transition': {
       'transition-property': 'background-color, color',
       'transition-duration': '500ms',
-      'background-color': 'green',
-      color: 'greenLight',
+      'background-color': 'black',
+      color: 'white',
       'font-weight': 'semibold',
       '&:hover': {
-        'background-color': 'greenLight',
+        'background-color': '#6ab840',
         color: 'black',
         'font-weight': 'semibold',
       },

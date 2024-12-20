@@ -9,35 +9,33 @@ export default function CommentEpisodeForm() {
   const { name, setName, email, setEmail, comment, setComment, isSubmitting, handleSubmit } = useCommentForm()
 
   return (
-    <main className='inset-0 flex flex-col items-center justify-center'>
-      <form
-        onSubmit={handleSubmit}
-        className='p-12 bg-greenLightPortal w-80'
-      >
-        <fieldset>
-          <legend className='sr-only'>Comment data</legend>
-          <NameInput
-            name={name}
-            setName={setName}
-          />
+    <form
+      onSubmit={handleSubmit}
+      className='p-8 bg-gradient-to-br rounded-lg shadow-lg w-full max-w-lg mx-auto'
+    >
+      <fieldset className='space-y-6'>
+        <legend className='sr-only'>Comment data</legend>
 
-          <EmailInput
-            email={email}
-            setEmail={setEmail}
-          />
-
-          <CommentInput
-            comment={comment}
-            setComment={setComment}
-          />
-        </fieldset>
-
-        <SubmitButton
-          label='Comment'
-          isSubmitting={isSubmitting}
-          aria-busy={isSubmitting}
+        <NameInput
+          name={name}
+          setName={setName}
         />
-      </form>
-    </main>
+
+        <EmailInput
+          email={email}
+          setEmail={setEmail}
+        />
+
+        <CommentInput
+          comment={comment}
+          setComment={setComment}
+        />
+      </fieldset>
+
+      <SubmitButton
+        label='Submit Comment'
+        isSubmitting={isSubmitting}
+      />
+    </form>
   )
 }
