@@ -1,4 +1,4 @@
-import Seo from './Seo'
+import Seo from '@pages/Seo'
 import EpisodesList from '@episodes/components/EpisodesList'
 
 export default function HomePage() {

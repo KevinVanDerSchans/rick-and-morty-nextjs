@@ -24,7 +24,7 @@ export default function Document() {
         />
         <meta
           name='description'
-          content='Rick & Morty app built with NextJS, React, Redux and TailwindCSS'
+          content='Rick & Morty App built with NextJS, React, Redux and TailwindCSS'
         />
         <meta
           name='author'

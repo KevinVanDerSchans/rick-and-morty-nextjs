@@ -1,5 +1,4 @@
-import React from 'react'
-import Seo from './Seo'
+import Seo from '@pages/Seo'
 
 export default function Custom404() {
   return (
