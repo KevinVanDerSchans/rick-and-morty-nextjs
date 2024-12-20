@@ -39,7 +39,10 @@ export default function EpisodeDetails() {
         </section>
 
         <section className='max-w-5xl w-full'>
-          <CharactersCarousel characterUrls={selectedEpisode.characters} />
+          <div className='p-6 rounded-xl'>
+            <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Characters</h3>
+            <CharactersCarousel characterUrls={selectedEpisode.characters} />
+          </div>
 
           <div className='p-6 rounded-xl'>
             <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Share Your Thoughts</h3>

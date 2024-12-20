@@ -27,9 +27,6 @@ export function EpisodeDetailsContent({ episode }: PropsType) {
       </div>
 
       <div className='mt-8 md:mt-10 w-full'>
-        <h2 className='text-xl md:text-2xl font-semibold text-greenPortal mb-4 md:mb-6 text-center uppercase tracking-wide'>
-          Characters
-        </h2>
         <div className='border-b-2 border-greenPortal'></div>
       </div>
     </main>
