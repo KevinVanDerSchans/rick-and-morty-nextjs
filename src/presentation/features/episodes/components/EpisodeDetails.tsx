@@ -33,21 +33,19 @@ export default function EpisodeDetails() {
 
   if (status === RequestStatus.Loaded && selectedEpisode) {
     return (
-      <main className='flex flex-col items-center min-h-screen bg-gradient-to-br from-greenPortal to-white p-6 py-20'>
-        <section className='max-w-5xl w-full p-4 rounded-xl'>
+      <main className='flex flex-col items-center min-h-screen bg-gradient-to-br from-greenPortal to-white p-6 py-20 space-y-16'>
+        <section className='max-w-5xl w-full rounded-xl shadow-lg bg-white'>
           <EpisodeDetailsContent episode={selectedEpisode} />
         </section>
 
-        <section className='max-w-5xl w-full'>
-          <div className='p-6 rounded-xl'>
-            <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Characters</h3>
-            <CharactersCarousel characterUrls={selectedEpisode.characters} />
-          </div>
+        <section className='max-w-5xl w-full p-6 rounded-xl shadow-lg bg-white'>
+          <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Characters</h3>
+          <CharactersCarousel characterUrls={selectedEpisode.characters} />
+        </section>
 
-          <div className='p-6 rounded-xl'>
-            <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Share Your Thoughts</h3>
-            <CommentEpisodeForm />
-          </div>
+        <section className='max-w-5xl w-full p-6 rounded-xl shadow-lg bg-white'>
+          <h3 className='text-2xl font-semibold text-black mb-4 text-center'>Share Your Thoughts</h3>
+          <CommentEpisodeForm />
         </section>
       </main>
     )
