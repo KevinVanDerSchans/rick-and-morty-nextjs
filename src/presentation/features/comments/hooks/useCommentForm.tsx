@@ -24,7 +24,6 @@ export function useCommentForm() {
       } else {
         errorService.handleError(new CommentEpisodeFormErrors.CommentEpisodeFormError())
         showCommentErrorAlert()
-        resetForm()
       }
     } catch (error) {
       errorService.handleError(new CommentEpisodeFormErrors.CommentEpisodeFormError())

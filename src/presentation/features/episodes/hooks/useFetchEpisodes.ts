@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState, AppDispatch } from '@redux/store/store'
 
 import { NEXT_PUBLIC_API_URL } from '@config/env'
+import { RequestStatus } from '@sharedTypes/RequestStatus'
 import { EpisodesRepository } from '@episodes/repositories/EpisodesRepository'
 import { getEpisodesAsync } from '@episodes/redux/episodesThunks'
 import { errorService } from '@errors/services/ErrorService'
@@ -24,7 +25,7 @@ export function useFetchEpisodes() {
   }, [repo, dispatch])
 
   useEffect(() => {
-    if (status === 'idle' || episodes.length === 0) {
+    if (status === RequestStatus.Idle || episodes.length === 0) {
       loadEpisodes()
     }
   }, [status, episodes, loadEpisodes])

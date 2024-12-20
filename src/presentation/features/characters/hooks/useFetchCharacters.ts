@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState, AppDispatch } from '@redux/store/store'
 
 import { NEXT_PUBLIC_API_URL } from '@config/env'
+import { RequestStatus } from '@sharedTypes/RequestStatus'
 import { CharactersRepository } from '@characters/repositories/CharactersRepository'
 import { getCharactersById } from '@characters/redux/charactersThunks'
 import { errorService } from '@errors/services/ErrorService'
@@ -24,13 +25,13 @@ export function useFetchCharacters(ids: number[]) {
         idsToLoad.forEach(id => loadedIdsRef.current.add(id))
       }
     } catch (error) {
-      errorService.handleError(new CharactersErrors.CharracterErrorFetchingById())
+      errorService.handleError(new CharactersErrors.CharacterErrorFetchingById())
       throw error
     }
   }, [repo, dispatch, ids])
 
   useEffect(() => {
-    if (status === 'idle' && ids.length > 0) {
+    if (status === RequestStatus.Idle && ids.length > 0) {
       loadCharacters()
     }
   }, [status, loadCharacters, ids])

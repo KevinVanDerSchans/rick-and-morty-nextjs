@@ -22,7 +22,7 @@ const charactersSlice = createSlice({
     })
     builder.addCase(getCharactersById.rejected, (state, action) => {
       state.status = RequestStatus.Error
-      state.fetchErrorMessage = action.error.message || 'Error loading Characters'
+      state.fetchErrorMessage = action.error.message || 'Error loading the characters'
     })
   },
 })
