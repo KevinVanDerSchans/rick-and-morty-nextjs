@@ -9,7 +9,7 @@ export const tailwindPlugins = ({ addBase, addUtilities }: PluginAPI) => {
       'transition-duration': '500ms',
       color: 'white',
       '&:hover': {
-        color: 'grey',
+        color: '#6ab840',
       },
     },
 
