@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import SVGS from '@constants/svgs'
 
 type Props = {
   onClick: () => void
@@ -7,7 +8,7 @@ type Props = {
 }
 
 export function CharactersCarouselButton({ onClick, direction }: Props) {
-  const buttonImage = direction === 'left' ? '/svgs/left-arrow.svg' : '/svgs/right-arrow.svg'
+  const buttonImage = direction === 'left' ? SVGS.LeftArrow : SVGS.RightArrow
   const ariaLabel = direction === 'left' ? 'Scroll to previous characters' : 'Scroll to next characters'
 
   return (

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import SVGS from '@constants/svgs'
 import { useRouter } from 'next/router'
 import { Episode } from '@entities/Episode'
 
@@ -23,10 +24,10 @@ export function EpisodeCard({ item }: PropsType) {
     >
       <div>
         <Image
-          src='/svgs/rick-and-morty-shadows.svg'
+          src={SVGS.EpisodeAvatar}
           alt='Episode avatar'
-          width={80}
-          height={80}
+          priority
+          className='h-16 w-auto'
         />
       </div>
 
