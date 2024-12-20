@@ -32,8 +32,6 @@
       "@utils/*": ["src/shared/utils/*"],
       "@svgs/*": ["public/svgs/*"],
       "@styles/*": ["styles/*"],
-      "@auth/*": ["src/presentation/features/auth/*"],
-      "@theme/*": ["src/presentation/features/theme/*"],
 
       "@episodes/*": ["src/presentation/features/episodes/*"],
       "@characters/*": ["src/presentation/features/characters/*"],
