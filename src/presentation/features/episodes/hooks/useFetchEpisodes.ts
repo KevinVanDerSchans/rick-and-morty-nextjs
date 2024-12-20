@@ -24,10 +24,10 @@ export function useFetchEpisodes() {
   }, [repo, dispatch])
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === 'idle' || episodes.length === 0) {
       loadEpisodes()
     }
-  }, [status, loadEpisodes])
+  }, [status, episodes, loadEpisodes])
 
   return {
     loadEpisodes,

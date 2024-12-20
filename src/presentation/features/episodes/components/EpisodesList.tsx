@@ -30,24 +30,24 @@ export default function EpisodesList() {
         </div>
       )}
 
-      {status === RequestStatus.Loaded && (
+      {status === RequestStatus.Loaded && episodes.length > 0 && (
         <section className='flex-grow py-20'>
           <ul
             role='list'
             className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 list-none px-12 py-12 pb-16 justify-center items-center'
           >
-            {episodes.length !== 0 ? (
-              episodes.map(item => (
-                <EpisodeCard
-                  key={item.id}
-                  item={item}
-                />
-              ))
-            ) : (
-              <p className='text-center'>There are no results that match your search.</p>
-            )}
+            {episodes.map(item => (
+              <EpisodeCard
+                key={item.id}
+                item={item}
+              />
+            ))}
           </ul>
         </section>
+      )}
+
+      {status === RequestStatus.Loaded && episodes.length === 0 && (
+        <p className='text-center text-xl mt-10'>There are no episodes available. Please try again later.</p>
       )}
     </>
   )
