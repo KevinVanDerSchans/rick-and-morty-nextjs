@@ -12,6 +12,7 @@ const config: Config = {
         ...themeConfig,
         greenPortal: '#2c9143',
         greenLightPortal: '#6ab840',
+        rickAndMortyLogo: '#42b3c9',
       },
     },
   },

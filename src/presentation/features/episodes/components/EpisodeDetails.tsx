@@ -9,7 +9,7 @@ import ErrorFeedback from '@errors/components/ErrorFeedback'
 export default function EpisodeDetails() {
   const { selectedEpisode, status } = useFetchEpisode()
 
-  if (status === RequestStatus.Error || !selectedEpisode) {
+  if (status === RequestStatus.Error) {
     return (
       <div
         aria-live='polite'

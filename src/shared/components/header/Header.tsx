@@ -18,6 +18,7 @@ const Header = () => {
               src={SVGS.LOGO}
               alt='Rick & Morty logo'
               priority
+              fetchPriority='high'
               className='h-12 w-auto'
             />
           </figure>

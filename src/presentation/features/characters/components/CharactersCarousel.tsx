@@ -50,9 +50,10 @@ export function CharactersCarousel({ characterUrls }: Props) {
                 <Image
                   src={character.image}
                   alt={character.name}
-                  className='rounded-xl shadow-md'
+                  priority
                   width={160}
                   height={160}
+                  className='rounded-xl shadow-md'
                 />
                 <p className='mt-2 text-sm font-semibold text-gray-800'>{character.name}</p>
               </div>
