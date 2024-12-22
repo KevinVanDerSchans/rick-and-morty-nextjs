@@ -47,7 +47,9 @@ export default function EpisodesList() {
       )}
 
       {status === RequestStatus.Loaded && episodes.length === 0 && (
-        <p className='text-center text-xl mt-10'>There are no episodes available. Please try again later.</p>
+        <section className='flex-grow py-20 justify-center items-center'>
+          <p className='text-center text-xl mt-10'>There are no episodes available. Please try again later.</p>
+        </section>
       )}
     </>
   )
